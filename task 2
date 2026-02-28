@@ -1,0 +1,35 @@
+# 1. Function using format()
+
+def format_example(num, char):
+    result = format(num, char)
+    return result
+
+output = format_example(145, 'o')
+print("Formatted result:", output)
+print("Representation used: Octal (base 8)")
+
+
+# 2. Area of circular pond and total water calculation
+
+pi = 3.14
+radius = 84
+
+area = pi * (radius ** 2)
+
+water_per_sq_meter = 1.4
+total_water = area * water_per_sq_meter
+
+print("\nArea of pond:", area)
+print("Total water in pond (liters):", int(total_water))  # without decimal
+
+
+# 3. Speed calculation
+
+distance = 490  # meters
+time_minutes = 7
+
+time_seconds = time_minutes * 60
+
+speed = distance / time_seconds
+
+print("\nSpeed in meters per second:", int(speed))  # without decimal
