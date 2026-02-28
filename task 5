@@ -1,0 +1,91 @@
+# Base Class
+class MobilePhone:
+    def __init__(self, screenType, networkType, dualSim,
+                 frontCamera, rearCamera, RAM, storage):
+        
+        self.screenType = screenType
+        self.networkType = networkType
+        self.dualSim = dualSim
+        self.frontCamera = frontCamera
+        self.rearCamera = rearCamera
+        self.RAM = RAM
+        self.storage = storage
+
+    # Basic functionalities
+    def make_call(self, number):
+        print("Calling", number, "...")
+
+    def receive_call(self, number):
+        print("Receiving call from", number)
+
+    def take_a_picture(self):
+        print("Picture taken using", self.rearCamera, "rear camera")
+
+    def phone_info(self):
+        print("\n--- Phone Specifications ---")
+        print("Screen Type:", self.screenType)
+        print("Network Type:", self.networkType)
+        print("Dual SIM:", self.dualSim)
+        print("Front Camera:", self.frontCamera)
+        print("Rear Camera:", self.rearCamera)
+        print("RAM:", self.RAM)
+        print("Storage:", self.storage)
+
+# Child Class - Apple
+
+
+class Apple(MobilePhone):
+    def __init__(self, networkType, dualSim,
+                 frontCamera, rearCamera, RAM, storage):
+        
+        # Using super() to call parent constructor
+        super().__init__("Touch Screen", networkType, dualSim,
+                         frontCamera, rearCamera, RAM, storage)
+
+    def apple_feature(self):
+        print("This phone has Face ID and iOS system.")
+
+
+
+# Child Class - Samsung
+
+
+class Samsung(MobilePhone):
+    def __init__(self, networkType, dualSim,
+                 frontCamera, rearCamera, RAM, storage):
+        
+        # Using super() to call parent constructor
+        super().__init__("Touch Screen", networkType, dualSim,
+                         frontCamera, rearCamera, RAM, storage)
+
+    def samsung_feature(self):
+        print("This phone has Android OS and AMOLED display.")
+
+
+
+# Creating Apple Objects
+
+apple1 = Apple("5G", False, "12MP", "48MP", "4GB", "64GB")
+apple2 = Apple("4G", False, "8MP", "16MP", "3GB", "32GB")
+
+
+# Creating Samsung Objects
+
+
+samsung1 = Samsung("5G", True, "16MP", "48MP", "4GB", "64GB")
+samsung2 = Samsung("4G", True, "8MP", "32MP", "3GB", "32GB")
+
+
+
+# Testing Objects
+
+
+apple1.phone_info()
+apple1.make_call("9876543210")
+apple1.take_a_picture()
+apple1.apple_feature()
+
+samsung1.phone_info()
+samsung1.receive_call("9123456780")
+samsung1.take_a_picture()
+samsung1.samsung_feature()
